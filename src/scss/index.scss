@@ -1,60 +1,250 @@
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url("../fonts/OpenSans-Regular.ttf");
+ }
+
+@font-face {
+  font-family: "Open Sans Semibold";
+  src: url("../fonts/OpenSans-SemiBold.ttf");
+ }
+
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("../fonts/OpenSans-Bold.ttf");
+ }
+
 $mainColor: rgba(46, 61, 190, 1);
+$btnSubmitColor: #FF9000;
+
+@mixin delimiterLine {
+  content: '';
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #D4D4D4;
+  box-sizing: border-box;
+}
 
 body {
     background-color: $mainColor;
-    font-family: sans-serif;
+    font-family: "Open Sans Regular";
 }
 
 .logo {
-    margin: 15px auto;
+    margin: 48px auto;
     display: block;
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 48px;
+  margin: 60px auto 156px;
+  max-width: 552px;
+  min-width: 320px;
+  box-sizing: border-box;
+  &-item {
+    position: relative;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 25px;
-    margin: 0 10px;
-    &-title {
-        font-family: sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 32px;
+  }
+  &-title {
+      font-family: "Open Sans Bold";
+      font-size: 24px;
+      line-height: 32px;
+  }
+  &-input {
+      font-size: 14px;
+      line-height: 16px;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #AAAAAA;
+      box-sizing: border-box;
+      border-radius: 4px;
+      max-width: 456px;
+      height: 32px;
+      outline: none;
+      &:hover {
+        border-color: #808080;
+      }
+      &__label {
+          margin-top: 15px;
+          font-family: "Open Sans Bold";
+          font-size: 14px;
+          line-height: 24px;
+      }
+  }
+  &-terms {
+    margin: 20px 0 12px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #565656;
+    a {
+      font-family: "Open Sans Semibold";
+      color: #45688F;
+      &:hover {
+        color: #6683A3;
+      }
     }
-    &-input {
-        font-family: sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-        padding: 8px;
-        margin-top: 4px;
+  }
+  &-btn__submit {
+      background: $btnSubmitColor;
+      border-radius: 4px;
+      border: none;
+      padding: 12px 0;
+      color: white;
+      font-family: "Open Sans Semibold";
+      cursor: pointer;
+      &:hover {
+        background-color: #FFA42E;
+      }
+      &:active {
+        transform: translateY(4px);
+      }
+  }
+  &-delimiter {
+    font-family: "Open Sans Semibold";
+    color: #808080;
+    height: 32px;
+    font-size: 14px;
+    line-height: 32px;
+    text-align: center;
+    margin-top: 20px;
+    overflow: hidden;
+    display: none;
+    span {
+      width: max-content;
+      position: relative;
+      display: block;
+      z-index: 100;
+      margin: 0 auto;
+      height: 32px;
+      &::before {
+        @include delimiterLine;
+        top: 50%;
+        right: calc(100% + 14px);
+      }
+      &::after {
+        @include delimiterLine;
+        top: -50%;
+        left: calc(100% + 14px);
+      }
+    }
+  }
+  &-group {
+    margin-top: 20px;
+    &__social {
+      display: flex;
+      justify-content: center;
+      .social-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 144px;
+        height: 40px;
         border: 1px solid #AAAAAA;
         box-sizing: border-box;
         border-radius: 4px;
-        &__label {
-            margin-top: 15px;
-            font-family: sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 24px;
+        color: #414141;
+        font-family: "Open Sans Semibold";
+        font-size: 14px;
+        line-height: 24px;
+        background-color: transparent;
+        margin: 0 6px;
+        cursor: pointer;
+        &:active {
+          transform: translateY(4px);
         }
+        span {
+          display: none;
+        }
+      }
     }
-    &-btn__submit {
-        background: #FF9000;
-        border-radius: 4px;
-        border: none;
-        padding: 12px 0;
-        color: white;
-        font-family: sans-serif;
-    }
-    &-delimiter {
-        
-    }
+  }
+
 }
 
+.js-validate-error-label {
+  color: #E15554 !important;
+  font-family: "Open Sans Semibold";
+  font-size: 12px;
+  line-height: 16px;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+}
+
+.js-validate-error-field {
+  border: 1px solid #E15554 !important;
+  color: #414141 !important;
+}
+
+.converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-title {
+    color: white;
+  }
+  &-wrap {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 150px;
+    width: 400px;
+    border-radius: 10px;
+  }
+  &-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-btn {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #AAAAAA;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #414141;
+    font-family: "Open Sans Semibold";
+    font-size: 14px;
+    line-height: 24px;
+    background-color: transparent;
+    margin: 0 6px;
+    cursor: pointer;
+    &:active {
+      transform: translateY(4px);
+    }
+  }
+  &-result {
+    height: 50px;
+    width: 100%;
+    font-family: "Open Sans Bold";
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 10px;
+  } 
+}
+
+
+
+@media screen and (min-width:480px) {
+  .form-group__social {
+    .social-login {
+      span {
+        display: block;
+      }
+    }
+  }
+  .form-delimiter {
+    display: block;
+  }
+}

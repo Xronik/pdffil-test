@@ -1,4 +1,4 @@
-const {src, dest, series, watch} = require('gulp')
+const { src, dest, series, watch } = require('gulp')
 const sass = require('gulp-sass')
 const csso = require('gulp-csso')
 const include = require('gulp-file-include')
@@ -28,7 +28,7 @@ function scss() {
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
     }))
-    .pipe(csso())
+    // .pipe(csso())
     .pipe(concat('index.css'))
     .pipe(dest('dist'))
     .pipe(dest('src/scss'))

@@ -9,17 +9,42 @@ html(lang="en")
     body 
     section 
         img.logo(src="images/airSlate-logo.svg", alt="logo")
-        form.form(action="#", method="post")
+        form.form(action="/", method="post")
             span.form-title Log in to airSlate
-            label.form-input__label(for="email") Email address
-            input.form-input#email(type="email", name="email", placeholder="name@email.com")
-            label.form-input__label(for="password") Password
-            input.form-input#password(type="password", name="password", placeholder="Enter password" )  
-            span.form-terms By clicking Log in, you agree to the Terms of Services and Privacy Policy, including receipt of emails from of us about our service.
+            .form-item
+              label.form-input__label(for="email") Email address
+              input.form-input#email(type="email", name="email", data-validate-field='email', placeholder="name@email.com")
+            .form-item
+              label.form-input__label(for="password") Password
+              input.form-input#password(type="password", name="password", data-validate-field='password', placeholder="Enter password" )  
+            span.form-terms 
+              | By clicking Log in, you agree to the 
+              a(href="") Terms of Services 
+              | and  
+              a(href="") Privacy Policy
+              | , including receipt of emails from of us about our service.
             button.form-btn__submit(type="submit") Log in
-            span.form-delimiter or continue with your social accounts
+            .form-delimiter
+              span or continue with your social accounts
             .form-group     
                 .form-group__social 
-                    button.social-login__facebook(type="button") facebook
-                    button.social-login__google(type="button") google
-                    button.social-login__apple(type="button") apple
+                    button.social-login(type="button") 
+                      img(src="./images/Facebook-login.svg", alt="facebook")
+                      span Facebook
+                    button.social-login(type="button") 
+                      img(src="./images/Google-login.svg", alt="google")
+                      span Google
+                    button.social-login(type="button") 
+                      img(src="./images/Apple-login.svg", alt="apple")
+                      span Apple
+    section.converter 
+      .converter-title 
+        h1 CURRENCE CONVERTER
+      .converter-wrap 
+        .converter-group
+          button.converter-btn(type="button" data-valueFrom="USD" data-valueTo="RUB" ) USD to RUB
+          button.converter-btn(type="button" data-valueFrom="USD" data-valueTo="UAH" ) USD to UAH
+          button.converter-btn(type="button" data-valueFrom="UAH" data-valueTo="RUB" ) UAH to RUB
+        span.converter-result Choose currence
+    script(src="./js/just-validate.min.js") 
+    script(src="./js/main.js") 
