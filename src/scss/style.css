@@ -21,8 +21,8 @@ body {
   font-family: "Open Sans Regular"; }
 
 .header {
-  margin-top: 48px;
-  margin-bottom: 48px; }
+  margin-top: 30px;
+  margin-bottom: 30px; }
   .header .logo {
     margin: 0 auto;
     display: block; }
@@ -266,4 +266,7 @@ body {
   .form-group__social .social-login span {
     display: block; }
   .form-delimiter {
-    display: block; } }
+    display: block; }
+  .header {
+    margin-top: 48px;
+    margin-bottom: 48px; } }

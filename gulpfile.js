@@ -82,6 +82,6 @@ function server() {
   watch('src/js/**.js', series(jsMin)).on('change', sync.reload)
 }
 
-exports.build = series(clear, cssMin, fonts, jsMin, images)
+exports.build = series(clear, pugCompile, cssMin, fonts, jsMin, images)
 exports.start = server
 exports.clear = clear

@@ -38,8 +38,8 @@ body {
 }
 
 .header {
-  margin-top: 48px;
-  margin-bottom: 48px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   .logo {
       margin: 0 auto;
       display: block;
@@ -259,5 +259,9 @@ body {
   }
   .form-delimiter {
     display: block;
+  }
+  .header {
+    margin-top: 48px;
+    margin-bottom: 48px;
   }
 }
