@@ -18,7 +18,8 @@
 
 body {
   background-color: #2e3dbe;
-  font-family: "Open Sans Regular"; }
+  font-family: "Open Sans Regular";
+  min-width: 345px; }
 
 .header {
   margin-top: 30px;
@@ -206,7 +207,8 @@ body {
           align-items: center;
   margin-bottom: 20px; }
   .converter-title {
-    color: white; }
+    color: white;
+    text-align: center; }
   .converter-wrap {
     background-color: white;
     display: -webkit-box;
