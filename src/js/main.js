@@ -16,17 +16,8 @@ let validateForms = (selector) => {
       }
     },
     focusWrongField: true,
-    submitHandler: (form, values, ajax) => {
+    submitHandler: (form, values) => {
       console.log('POST data: ', values)
-      ajax({
-        url: '/',
-        method: 'POST',
-        data: values,
-        async: true,
-        callback: function (response) {
-          return true
-        }
-      });
     },
   })
 }
