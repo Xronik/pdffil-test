@@ -5,19 +5,21 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
-        link(rel="stylesheet", href="scss/index.css")
+        link(rel="stylesheet", href="css/style.min.css")
     body 
-    section 
+    header.header
         img.logo(src="images/airSlate-logo.svg", alt="logo")
+    section.main 
         form.form(action="/", method="post")
-            span.form-title Log in to airSlate
-            .form-item
+            .form-title 
+              h2 Log in to airSlate
+            .form-input__wrap
               label.form-input__label(for="email") Email address
-              input.form-input#email(type="email", name="email", data-validate-field='email', placeholder="name@email.com")
-            .form-item
+              input.form-input(type="email", name="email", data-validate-field='email', placeholder="name@email.com")
+            .form-input__wrap
               label.form-input__label(for="password") Password
-              input.form-input#password(type="password", name="password", data-validate-field='password', placeholder="Enter password" )  
-            span.form-terms 
+              input.form-input(type="password", name="password", data-validate-field='password', placeholder="Enter password" )  
+            .form-terms 
               | By clicking Log in, you agree to the 
               a(href="") Terms of Services 
               | and  
@@ -45,6 +47,6 @@ html(lang="en")
           button.converter-btn(type="button" data-valueFrom="USD" data-valueTo="RUB" ) USD to RUB
           button.converter-btn(type="button" data-valueFrom="USD" data-valueTo="UAH" ) USD to UAH
           button.converter-btn(type="button" data-valueFrom="UAH" data-valueTo="RUB" ) UAH to RUB
-        span.converter-result Choose currence
-    script(src="./js/just-validate.min.js") 
-    script(src="./js/main.js") 
+        .converter-result Choose currence
+    //- script(src="./js/just-validate.min.js") 
+    script(src="./js/main.min.js") 
