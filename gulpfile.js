@@ -1,7 +1,6 @@
 const { src, dest, series, watch } = require('gulp')
 const sass = require('gulp-sass')
 const csso = require('gulp-csso')
-const htmlmin = require('gulp-htmlmin')
 const del = require('del')
 const concat = require('gulp-concat')
 const autoprefixer = require('gulp-autoprefixer')
@@ -12,14 +11,6 @@ const uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin');
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
-
-function html() {
-  return src('src/**.html')
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(dest('dist'))
-}
 
 function fonts() {
   src('src/fonts/*.ttf')
@@ -32,10 +23,8 @@ function fonts() {
 
 function pugCompile() {
   return src('src/**.pug')
-    .pipe(pug({
-      pretty: true
-    }))
-    .pipe(dest('src'))
+    .pipe(pug())
+    .pipe(dest('dist'))
 }
 
 function scss() {
@@ -88,13 +77,11 @@ function server() {
     server: './dist'
   })
   watch('src/**.pug', series(pugCompile)).on('change', sync.reload)
-  watch('src/**.html', series(html)).on('change', sync.reload)
-
   watch('src/scss/**.scss', series(scss)).on('change', sync.reload)
   watch('src/scss/**.css', series(cssMin)).on('change', sync.reload)
   watch('src/js/**.js', series(jsMin)).on('change', sync.reload)
 }
 
-exports.build = series(clear, cssMin, html, fonts, jsMin, images)
+exports.build = series(clear, cssMin, fonts, jsMin, images)
 exports.start = server
 exports.clear = clear

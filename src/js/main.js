@@ -24,7 +24,7 @@ let validateForms = (selector) => {
         data: values,
         async: true,
         callback: function (response) {
-          console.log(response)
+          return true
         }
       });
     },
