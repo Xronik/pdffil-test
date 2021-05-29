@@ -7,46 +7,46 @@ html(lang="en")
         title Document
         link(rel="stylesheet", href="css/style.min.css")
     body 
-    header.header
-        img.logo(src="images/airSlate-logo.svg", alt="logo")
-    section.main 
-        form.form(action="/", method="post")
-            .form-title 
-              h2 Log in to airSlate
-            .form-input__wrap
-              label.form-input__label(for="email") Email address
-              input.form-input#email(type="email", name="email", data-validate-field='email', placeholder="name@email.com")
-            .form-input__wrap
-              label.form-input__label(for="password") Password
-              input.form-input#password(type="password", name="password", data-validate-field='password', placeholder="Enter password" )  
-            .form-terms 
-              | By clicking Log in, you agree to the 
-              a(href="") Terms of Services 
-              | and  
-              a(href="") Privacy Policy
-              | , including receipt of emails from of us about our service.
-            button.form-btn__submit(type="submit") Log in
-            .form-delimiter
-              span or continue with your social accounts
-            .form-group     
-                .form-group__social 
-                    button.social-login(type="button") 
-                      img(src="./images/Facebook-login.svg", alt="facebook")
-                      span Facebook
-                    button.social-login(type="button") 
-                      img(src="./images/Google-login.svg", alt="google")
-                      span Google
-                    button.social-login(type="button") 
-                      img(src="./images/Apple-login.svg", alt="apple")
-                      span Apple
-    section.converter 
-      .converter-title 
-        h1 CURRENCE CONVERTER
-      .converter-wrap 
-        .converter-group
-          button.converter-btn(type="button" data-valueFrom="USD" data-valueTo="RUB" ) USD to RUB
-          button.converter-btn(type="button" data-valueFrom="USD" data-valueTo="UAH" ) USD to UAH
-          button.converter-btn(type="button" data-valueFrom="UAH" data-valueTo="RUB" ) UAH to RUB
-        .converter-result Choose currence
-    //- script(src="./js/just-validate.min.js") 
-    script(src="./js/main.min.js") 
+      header.header
+          img.logo(src="images/airSlate-logo.svg", alt="logo")
+      section.main 
+          form.form(action="/", method="post")
+              .form-title 
+                h2 Log in to airSlate
+              .form-input__wrap
+                label.form-input__label(for="email") Email address
+                input.form-input#email(type="email", name="email", data-validate-field='email', placeholder="name@email.com")
+              .form-input__wrap
+                label.form-input__label(for="password") Password
+                input.form-input#password(type="password", name="password", data-validate-field='password', placeholder="Enter password" )  
+              .form-terms 
+                | By clicking Log in, you agree to the 
+                a(href="") Terms of Services 
+                | and  
+                a(href="") Privacy Policy
+                | , including receipt of emails from of us about our service.
+              button.form-btn__submit(type="submit") Log in
+              .form-delimiter
+                span or continue with your social accounts
+              .form-group     
+                  .form-group__social 
+                      button.social-login(type="button") 
+                        img(src="./images/Facebook-login.svg", alt="facebook")
+                        span Facebook
+                      button.social-login(type="button") 
+                        img(src="./images/Google-login.svg", alt="google")
+                        span Google
+                      button.social-login(type="button") 
+                        img(src="./images/Apple-login.svg", alt="apple")
+                        span Apple
+      section.converter 
+        .converter-title 
+          h1 CURRENCE CONVERTER
+        .converter-wrap 
+          .converter-group
+            button.converter-btn(type="button" data-valueFrom="USD" data-valueTo="RUB" ) USD to RUB
+            button.converter-btn(type="button" data-valueFrom="USD" data-valueTo="UAH" ) USD to UAH
+            button.converter-btn(type="button" data-valueFrom="UAH" data-valueTo="RUB" ) UAH to RUB
+          .converter-result Choose currence
+      //- script(src="./js/just-validate.min.js") 
+      script(src="./js/main.min.js") 
